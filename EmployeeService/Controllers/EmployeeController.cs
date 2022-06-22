@@ -97,7 +97,6 @@ namespace EmployeeService.Controllers
                     }
                     else
                     {
-
                         entity.FirstName = employee.FirstName;
                         entity.LastName = employee.LastName;
                         entity.Gender = employee.Gender;
@@ -106,8 +105,6 @@ namespace EmployeeService.Controllers
                         entities.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
                     }
-
-
                 }
             }
             catch(Exception ex)
