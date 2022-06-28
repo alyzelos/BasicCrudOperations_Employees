@@ -39,7 +39,6 @@ namespace EmployeeService.Controllers
         {
             try
             {
-
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
                     entities.Employees.Add(employee);
@@ -49,7 +48,6 @@ namespace EmployeeService.Controllers
                     messge.Headers.Location = new Uri(Request.RequestUri + employee.ID.ToString());
                     return messge;
                 }
-
             }
             catch (Exception ex)
             {
@@ -61,7 +59,6 @@ namespace EmployeeService.Controllers
         {
             try
             {
-
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
                     var entity = entities.Employees.FirstOrDefault(e => e.ID == id);
@@ -74,7 +71,6 @@ namespace EmployeeService.Controllers
                         entities.Employees.Remove(entity);
                         entities.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK);
-
                     }
                 }
             }
